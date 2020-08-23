@@ -1,10 +1,6 @@
 html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    link(rel='stylesheet' type='text/css' href='/stylesheet/style.css')
-    title Event RSVP
-  body
+  include layouts/header
+  body.container-sm
     h1 List of guests
     - var attending = users.filter(user => user.attending === true)
     - var notAttending = users.filter(user => user.attending === false)
@@ -24,4 +20,4 @@ html(lang="en")
           li= "Email: " + user.email
           li= "Attending? " + user.attending
           li= "# of guests: " + user.guests
-    
+    include layouts/bootstrap-js

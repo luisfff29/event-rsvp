@@ -1,32 +1,38 @@
 html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    link(rel='stylesheet' type='text/css' href='/stylesheet/style.css')
-    title Event RSVP
-  body
-    h1 Event RSVP Form
-    form(method="POST" action="/reply")
-      fieldset
-        legend="Your Contact Info"
-        label(for="name")="Name"
-        input(type="text" name="name" required)
-        label(for="email")="Email"
-        input(type="email" name="email" required)
-        label(for="attending")="Attending"
-        input(type="radio" name="attending" value="yes" required)
-        | I'll be there!
-        input(type="radio" name="attending" value="no" required)
-        | I can't make it
-        |
-        label(for="guests")="Number of Guests"
-        select(name="guests" required) 
-          option(value=1) 1
-          option(value=2) 2
-          option(value=3) 3
-          option(value=4) 4
-          option(value=5) 5
-          option(value=6) 6
-          option(value=7) 7
-          option(value=8) 8
-        button(type="submit") Submit
+  include layouts/header
+  body.container-sm
+    h1.text-center Event RSVP Form
+    form(method="POST" action="/reply").p-3
+      u: h2 Your Contact Info
+      div.form-group.row
+        label(for="name").col-sm-4.col-form-label Name
+        div.col-sm-8
+          input(type="text" name="name" required).form-control
+      div.form-group.row
+        label(for="email").col-sm-4.col-form-label Email
+        div.col-sm-8
+          input(type="email" name="email" required).form-control
+      div.form-group
+        div.row
+          legend(for="attending").col-form-label.col-sm-4.pt-0 Are you attending to the event?
+          div.col-sm-8
+            div.form-check
+              input(type="radio" name="attending" value="yes" id="r1" required).form-check-input
+              label(for="r1").form-check-label I'll be there!
+            div.form-check
+              input(type="radio" name="attending" value="no" id="r2" required).form-check-input
+              label(for="r2").form-check-label I can't make it
+      div.form-group.row
+        label(for="guests").col-sm-4.col-form-label How many guests are you bringing? (Include yourself)
+        div.col-sm-1
+          select(name="guests" required).form-control
+            option(value=1) 1
+            option(value=2) 2
+            option(value=3) 3
+            option(value=4) 4
+            option(value=5) 5
+            option(value=6) 6
+            option(value=7) 7
+            option(value=8) 8
+      button(type="submit").btn Submit
+    include layouts/bootstrap-js
