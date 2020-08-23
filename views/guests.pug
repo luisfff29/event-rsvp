@@ -6,8 +6,22 @@ html(lang="en")
     title Event RSVP
   body
     h1 List of guests
+    - var attending = users.filter(user => user.attending === true)
+    - var notAttending = users.filter(user => user.attending === false)
     div
       h3 Attending
+      each user in attending
+        ul
+          li= "Name: " + user.name
+          li= "Email: " + user.email
+          li= "Attending? " + user.attending
+          li= "# of guests: " + user.guests
     div
       h3 Not attending
+      each user in notAttending
+        ul
+          li= "Name: " + user.name
+          li= "Email: " + user.email
+          li= "Attending? " + user.attending
+          li= "# of guests: " + user.guests
     

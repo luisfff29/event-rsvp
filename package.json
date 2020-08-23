@@ -19,6 +19,7 @@
   "homepage": "https://github.com/luisfff29/event-rsvp#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.10.0",
     "pug": "^3.0.0"
   },
   "devDependencies": {

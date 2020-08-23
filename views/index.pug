@@ -14,13 +14,13 @@ html(lang="en")
         label(for="email")="Email"
         input(type="email" name="email" required)
         label(for="attending")="Attending"
-        input(type="radio" name="attending" value="yes")
+        input(type="radio" name="attending" value="yes" required)
         | I'll be there!
-        input(type="radio" name="attending" value="no")
+        input(type="radio" name="attending" value="no" required)
         | I can't make it
         |
         label(for="guests")="Number of Guests"
-        select(name="guests")
+        select(name="guests" required) 
           option(value=1) 1
           option(value=2) 2
           option(value=3) 3
