@@ -14,8 +14,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/reply", (req, res) => {
+  res.setHeader("Content-type", "text/html");
   console.log(req.body);
-  res.send("Thank you for your response!");
+  res.send(
+    `Thank you for your response! <br> <a href="/guests">Check list of guests</a>`
+  );
+});
+
+app.get("/guests", (req, res) => {
+  res.render("guests");
 });
 
 app.listen(port, () => {
