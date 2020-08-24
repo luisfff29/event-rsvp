@@ -3,7 +3,7 @@ html(lang="en")
   body.container-sm
     h1.text-center Event RSVP Form
     form(method="POST" action="/reply").p-3
-      u: h2 Your Contact Info
+      h2 Your Contact Info
       div.form-group.row
         label(for="name").col-sm-4.col-form-label Name
         div.col-sm-8
@@ -15,7 +15,7 @@ html(lang="en")
       div.form-group
         div.row
           legend(for="attending").col-form-label.col-sm-4.pt-0 Are you attending to the event?
-          div.col-sm-8
+          div.col-sm-8#check
             div.form-check
               input(type="radio" name="attending" value="yes" id="r1" required).form-check-input
               label(for="r1").form-check-label I'll be there!
@@ -25,7 +25,7 @@ html(lang="en")
       div.form-group.row
         label(for="guests").col-sm-4.col-form-label How many guests are you bringing? (Include yourself)
         div.col-sm-1
-          select(name="guests" required).form-control
+          select(name="guests" id="numOfGuests").form-control
             option(value=1) 1
             option(value=2) 2
             option(value=3) 3

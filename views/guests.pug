@@ -4,20 +4,21 @@ html(lang="en")
     h1 List of guests
     - var attending = users.filter(user => user.attending === true)
     - var notAttending = users.filter(user => user.attending === false)
-    div
-      h3 Attending
-      each user in attending
-        ul
-          li= "Name: " + user.name
-          li= "Email: " + user.email
-          li= "Attending? " + user.attending
-          li= "# of guests: " + user.guests
-    div
-      h3 Not attending
-      each user in notAttending
-        ul
-          li= "Name: " + user.name
-          li= "Email: " + user.email
-          li= "Attending? " + user.attending
-          li= "# of guests: " + user.guests
+    .row
+      .col-sm.m-3.p-3#attending
+        h2 Attending
+        each user in attending
+          ul
+            li= "Name: " + user.name
+            li= "Email: " + user.email
+            li= "Attending? " + user.attending
+            li= "# of guests: " + user.guests
+      .col-sm.m-3.p-3#notattending
+        h2 Not attending
+        each user in notAttending
+          ul
+            li= "Name: " + user.name
+            li= "Email: " + user.email
+            li= "Attending? " + user.attending
+            li= "# of guests: " + user.guests
     include layouts/bootstrap-js
