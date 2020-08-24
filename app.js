@@ -37,10 +37,7 @@ app.post("/reply", (req, res) => {
     console.log(user);
   });
 
-  res.setHeader("Content-type", "text/html");
-  res.send(
-    `Thank you for your response! <br> <a href="/guests">Check list of guests</a>`
-  );
+  res.render("reply");
 });
 
 app.get("/guests", (req, res) => {
@@ -48,13 +45,6 @@ app.get("/guests", (req, res) => {
     if (err) console.error(err);
     res.render("guests", { users: rsvps });
   });
-});
-
-app.get("/delete", (req, res) => {
-  Rsvp.deleteMany((err, rsvpvs) => {
-    if (err) console.error(err);
-  });
-  res.send("All data was deleted");
 });
 
 app.listen(port, () => {
