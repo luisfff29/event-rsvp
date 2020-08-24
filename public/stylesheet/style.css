@@ -1,19 +1,31 @@
 :root {
-  --color-light: #e8ded2;
+  --color-light: #f1f1e8;
   --color-content: #a3d2ca;
-  --color-text: #5eaaa8;
+  --color-border: #5eaaa8;
   --color-dark: #056676;
+
+  --att-content: #bfdcae;
+  --att-border: #81b214;
+  --att-dark: #206a5d;
+
+  --notatt-content: #ffcb8e;
+  --notatt-border: #e97171;
+  --notatt-dark: #810000;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "Oranienbaum", serif;
-  font-size: medium;
+  font-family: "Josefin Slab", serif;
 }
 
 html,
 body {
   background-color: var(--color-light) !important;
+}
+
+body {
+  position: relative;
+  top: 2rem;
 }
 
 input,
@@ -23,14 +35,31 @@ select {
 
 form {
   background-color: var(--color-content) !important;
-  border: 0.1rem solid var(--color-text);
+  border: 0.1rem solid var(--color-border);
   border-radius: 10px;
   box-shadow: 10px 20px var(--color-dark);
 }
 
+#attending {
+  background-color: var(--att-content) !important;
+  border: 0.1rem solid var(--att-border);
+  border-radius: 10px;
+  box-shadow: 10px 20px var(--att-dark);
+}
+
+#notAttending {
+  background-color: var(--notatt-content) !important;
+  border: 0.1rem solid var(--notatt-border);
+  border-radius: 10px;
+  box-shadow: 10px 20px var(--notatt-dark);
+}
+
 h1 {
-  font-family: "Playfair Display SC", serif;
-  padding: 2rem 0;
+  font-family: "Bebas Neue", cursive;
+}
+
+h2 {
+  text-decoration: underline;
 }
 
 button {
